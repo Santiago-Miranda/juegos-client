@@ -1,11 +1,10 @@
 import axios from "axios";
-import fetch from "fetch";
-const url = "https://videojuegosapp.herokuapp.com"
+const url = "https://videojuegosapp.herokuapp.com/"
 //aca se conecta el back con el front
 
 export function getVideogames() { //obtener todos los videojuegos
     return async function (dispatch) {
-        let json = await axios.get(`${url}/videogames`); //nos traemos los juegos
+        let json = await axios(`${url}/videogames`); //nos traemos los juegos
         return dispatch({
             type: "GET_VIDEOGAMES",
             payload: json.data
@@ -40,7 +39,7 @@ export function orderByRating(payload) { //ordernar por rating asc o desc
 export function getNameVideogames(payload) { //obtener videojuegos por nombre
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${url}/videogames?name=` + payload); //el payload viene siendo el nombre del juego
+            let json = await axios(`${url}/videogames?name=` + payload); //el payload viene siendo el nombre del juego
             return dispatch({
                 type: "GET_NAME_VIDEOGAMES",
                 payload: json.data
@@ -56,7 +55,7 @@ export function getNameVideogames(payload) { //obtener videojuegos por nombre
 
 export function getGenres() { //obtener generos
     return async function (dispatch) {
-        let info = await axios.get(`${url}/genres`);
+        let info = await axios(`${url}/genres`);
 
         return dispatch({
             type: "GET_GENRES",
@@ -75,7 +74,7 @@ export function filterByGenre(payload) {//filtrame por generados o creados
 export function getDetail(payload) { //obtener detalle del videojuego(ID)
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${url}/videogame` + payload);
+            let json = await axios(`${url}/videogame` + payload);
 
             return dispatch({
                 type: "GET_DETAIL",
