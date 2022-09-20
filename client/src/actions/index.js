@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "https://videojuegosapp.herokuapp.com/"
+const url = "https://videojuegosapp.herokuapp.com"
 //aca se conecta el back con el front
 
 export function getVideogames() { //obtener todos los videojuegos
