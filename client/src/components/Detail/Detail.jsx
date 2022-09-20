@@ -23,7 +23,7 @@ export default function Detail(){
     console.log(myVideogame)
 
 
-    if (myVideogame.id == id) {
+    
         return (
           <div key={id} className={style.container}>
             <div className={style.div}>
@@ -56,12 +56,4 @@ export default function Detail(){
             </div>
           </div>
         );
-      } else {
-        return (
-          <div>
-           <ErrorRoute/>
-          </div>
-        );
-      }
-
-}
+      } 
